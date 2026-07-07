@@ -164,7 +164,7 @@ is (join(q[ ], npg::view::instrument->lab_names()), 'Ogilvie Sulston',
   my $expected = GD::Image->new( File::Spec->catfile($image_dir, 'AVITI24.png'));
   $str =~s/\A(?:^\S[^\n]*\n)+\n(\x89PNG)/$1/smx; #trim http header off 
   my $rendered = GD::Image->new($str);
-  ok (!($rendered->compare($expected) & GD_CMP_IMAGE), 'idle AVITI image');
+  ok (!($rendered->compare($expected) & GD_CMP_IMAGE), 'idle AVITI image ' . $str);
 }
 
 
